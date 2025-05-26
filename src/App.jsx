@@ -4,7 +4,7 @@ export const App = () => {
     return (
         <div>
             <header>
-                <h1>Home de Alumnos</h1>
+                <h1>Gestion de Alumnos</h1>
                 <nav>
                     <Link to="/">Inicio</Link>
                     <Link to="/lista">Lista de Alumnos</Link>
