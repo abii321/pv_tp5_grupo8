@@ -1,4 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
+
 
 export const Listar = ({ alumnos, eliminarAlumno }) => {
   return (
@@ -26,17 +28,21 @@ export const Listar = ({ alumnos, eliminarAlumno }) => {
                   <td>{a.apellido}</td>
                   <td>{a.curso}</td>
                   <td>
+                    <Link to={`/lista/${a.lu}`} className="btn btn-sm btn-info me-2">
+                      Ver Detalles
+                    </Link>
                     <button
                       className="btn btn-sm btn-danger"
                       onClick={() => {
-                        if (confirm(`¿Seguro que querés eliminar a ${a.nombre}?`)) {
-                          eliminarAlumno(a.lu);
-                        }
+                      if (confirm(`¿Seguro que querés eliminar a ${a.nombre}?`)) {
+                      eliminarAlumno(a.lu);
+                      }
                       }}
                     >
-                      Eliminar
-                    </button>
-                  </td>
+      Eliminar
+  </button>
+</td>
+
                 </tr>
               ))}
             </tbody>

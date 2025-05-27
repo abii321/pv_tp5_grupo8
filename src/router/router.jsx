@@ -3,7 +3,9 @@ import { Home } from '../views/Home.jsx';
 import { AcercaDe } from '../views/AcercaDe.jsx';
 import { Agregar } from '../views/Agregar.jsx';
 import { Listar } from '../views/Listar.jsx';
+import { Detalle } from '../views/Detalle.jsx';
 import { createBrowserRouter } from 'react-router-dom';
+
 
 
 export const router = (alumnos, agregarAlumno, eliminarAlumno) =>
@@ -15,7 +17,8 @@ export const router = (alumnos, agregarAlumno, eliminarAlumno) =>
         { index: true, element: <Home /> },
         { path: 'acercade', element: <AcercaDe /> },
         { path: 'agregar', element: <Agregar agregarAlumno={agregarAlumno} /> },
-        { path: 'lista', element: <Listar alumnos={alumnos} eliminarAlumno={eliminarAlumno} /> }
+        { path: 'lista', element: <Listar alumnos={alumnos} eliminarAlumno={eliminarAlumno} /> },
+        { path: 'lista/:lu', element: <Detalle alumnos={alumnos} /> }
       ]
     }
   ]);
