@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
-import { router } from './router/router';
+import { router as createRouter } from './router/router';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const Main = () => {
+  const [alumnos, setAlumnos] = useState([]);
+
+  const agregarAlumno = (nuevoAlumno) => {
+    setAlumnos([...alumnos, nuevoAlumno]);
+  };
+
+  const eliminarAlumno = (lu) => {
+    setAlumnos(alumnos.filter((a) => a.lu !== lu));
+  };
+
+  const router = createRouter(alumnos, agregarAlumno, eliminarAlumno);
+
+  return <RouterProvider router={router} />;
+};
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <Main />
   </React.StrictMode>
-)
-
+);
