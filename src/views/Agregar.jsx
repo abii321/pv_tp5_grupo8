@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const Agregar = () => {
+export const Agregar = ({ agregarAlumno }) => {
   const navigate = useNavigate();
 
   const [formulario, setFormulario] = useState({
@@ -24,7 +24,8 @@ export const Agregar = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Alumno agregado:", formulario);
-
+ agregarAlumno(formulario);
+    navigate("/lista");
  
   };
 
