@@ -1,0 +1,17 @@
+h1, h2{
+    text-align: center;
+    color: #baa1a7;
+    text-transform: uppercase;
+    padding: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-bar{
+    background-color:#baa1a7;
+}
+
+footer{
+    padding: 5px;
+    background-color: #baa1a7;
+    text-align: center;
+}

@@ -1,18 +1,25 @@
 import { Link, Outlet } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+
 
 export const App = () => {
   return (
-    <div>
+    <>
       <header>
         <h1>Gestión de Alumnos</h1>
-        <nav>
-          <ul style={{ display: "flex", gap: "1rem", listStyle: "none", padding: 0 }}>
-            <li><Link to="/">Inicio</Link></li>
-            <li><Link to="/lista">Lista de Alumnos</Link></li>
-            <li> <Link to="/agregar">Nuevo Alumno</Link></li>
-            <li><Link to="/acercade">Acerca de</Link></li>
-          </ul>
-        </nav>
+        
+        <Navbar className="nav-bar">
+          <Container>
+            <Nav style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', width: '100%', color:'white'}}>
+              <Nav.Link href="/">Inicio</Nav.Link>
+              <Nav.Link href="/lista">Lista de Alumnos</Nav.Link>
+              <Nav.Link href="/agregar">Nuevo Alumno</Nav.Link>
+              <Nav.Link href="/acercade">Acerca de</Nav.Link>
+            </Nav>
+          </Container>
+        </Navbar>
       </header>
 
       <main>
@@ -22,6 +29,6 @@ export const App = () => {
       <footer>
         <p>2025© Gestión de Alumnos</p>
       </footer>
-    </div>
+    </>
   );
 };
