@@ -1,22 +1,28 @@
-import React, { useState } from 'react';
+import React, { useMemo } from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import { router as createRouter } from './router/router';
+import { useLista } from './assets/components/uselista';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '/src/assets/index.css'
 
 const Main = () => {
-  const [alumnos, setAlumnos] = useState([]);
+    const {
+     alumnos,        
+  papelera,       
+  agregarAlumno,
+  eliminarAlumno,
+  restaurarAlumno
+  } = useLista();
 
-  const agregarAlumno = (nuevoAlumno) => {
-    setAlumnos([...alumnos, nuevoAlumno]);
-  };
-
-  const eliminarAlumno = (lu) => {
-    setAlumnos(alumnos.filter((a) => a.lu !== lu));
-  };
-
-  const router = createRouter(alumnos, agregarAlumno, eliminarAlumno);
+  // Este router se vuelve a crear cada vez que alumnos/papelera cambian
+  const router = useMemo(() => createRouter(
+    alumnos,
+    papelera,
+    agregarAlumno,
+    eliminarAlumno,
+    restaurarAlumno
+  ), [alumnos, papelera]);
 
   return <RouterProvider router={router} />;
 };

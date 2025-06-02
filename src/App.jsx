@@ -14,7 +14,7 @@ export const App = () => {
           <Container>
             <Nav style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', width: '100%', color:'white'}}>
               <Nav.Link href="/">Inicio</Nav.Link>
-              <Nav.Link href="/lista">Lista de Alumnos</Nav.Link>
+              <Nav.Link href="/lista">Lista de Alumnos</Nav.Link>   
               <Nav.Link href="/agregar">Nuevo Alumno</Nav.Link>
               <Nav.Link href="/acercade">Acerca de</Nav.Link>
             </Nav>
