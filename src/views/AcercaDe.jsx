@@ -6,7 +6,7 @@ export const AcercaDe = () => {
         {nombre: "Cansino Lujan", escuela:"Escuela de Minas", git: "lujancansino", link:"/public/creators/programmer.png"},
         {nombre: "Orellana Ariana", escuela:"Escuela de Minas", git: "orellanaariana", link:"/public/creators/programmer.png"},
         {nombre: "Rodriguez Sofia Victoria", escuela:"Escuela de Minas", git: "soffiro", link:"/public/creators/programmer.png"},
-        {nombre: "Tarifa Abril Lucero", escuela:"Escuela de Minas", git: "laltarifa", link:"/public/creators/programmer.png"},
+        {nombre: "Tarifa Abril Lucero", escuela:"Escuela de Minas", git: "altarifa", link:"/public/creators/programmer.png"},
         {nombre: "Teran Luciana Abigail", escuela:"Escuela de Minas", git: "abii321", link:"/public/creators/programmer.png"}
     ];
 
