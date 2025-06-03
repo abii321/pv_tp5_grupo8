@@ -34,6 +34,7 @@ export const useLista = () => {
   // Retornamos los datos y funciones necesarias para usarlos en otros componentes
   return {
     alumnos,
+    setAlumnos,
     papelera,
     agregarAlumno,
     eliminarAlumno,

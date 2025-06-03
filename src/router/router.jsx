@@ -5,13 +5,15 @@ import { Agregar } from '../views/Agregar.jsx';
 import { Listar } from '../views/Listar.jsx';
 import { Detalle } from '../views/Detalle.jsx';
 import { createBrowserRouter } from 'react-router-dom';
+import EditarAlumno from '../views/EditarAlumno.jsx';
 
 export const router = (
   alumnosActivos,
   alumnosEliminados,
   agregarAlumno,
   eliminarAlumno,
-  restaurarAlumno
+  restaurarAlumno,
+  setAlumnos
 ) =>
   createBrowserRouter([
     {
@@ -46,7 +48,15 @@ export const router = (
         {
           path: 'lista/:lu',
           element: <Detalle alumnos={alumnosActivos} />
-        }
+        }, 
+        {
+        path: 'editar/:id',
+        element: (
+          <EditarAlumno
+            alumnos={alumnosActivos}
+            setAlumnos={setAlumnos}   />
+  )
+}
       ]
     }
   ]);
