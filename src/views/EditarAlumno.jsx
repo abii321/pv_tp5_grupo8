@@ -1,5 +1,3 @@
-
-jsx
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Form, Button, Container } from "react-bootstrap";
@@ -19,7 +17,11 @@ function EditarAlumno({ alumnos, setAlumnos }) {
 
     useEffect(() => {
         const alumno = alumnos.find(a => a.lu === id);
-        if (alumno) setFormData(alumno);
+        if (alumno) {
+            setFormData(alumno);
+    }   else {
+        alert("Alumno no encontrado");
+        navigate("/lista"); }
     }, [id, alumnos]);
 
     const handleChange = (e) => {
@@ -28,10 +30,12 @@ function EditarAlumno({ alumnos, setAlumnos }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const updatedAlumnos = alumnos.map(a => (a.lu === id ? formData : a));
+        const updatedAlumnos = alumnos.map(a =>
+  String(a.lu) === id ? { ...a, ...formData } : a
+);
         setAlumnos(updatedAlumnos);
         alert("Alumno actualizado correctamente");
-        navigate("/alumnos");
+        navigate("/lista");
     };
 
     return (
@@ -56,6 +60,13 @@ function EditarAlumno({ alumnos, setAlumnos }) {
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Guardar Cambios
+                </Button>
+                <Button
+                variant="secondary"
+                className="ms-2"
+                onClick={() => navigate("/lista")}
+                >
+                Volver a la Lista
                 </Button>
             </Form>
         </Container>

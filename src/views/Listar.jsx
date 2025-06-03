@@ -1,8 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
-
+import { Button } from 'react-bootstrap'; 
+import { useNavigate } from 'react-router-dom';
 // Componente que muestra una lista de alumnos o una papelera dependiendo del modo
 export const Listar = ({ alumnos, eliminarAlumno, restaurarAlumno, papeleraMode = false }) => {
+  const navigate = useNavigate();
   return (
     <div className="container mt-4 p-4 rounded shadow" style={{ backgroundColor: '#fef3f7' }}>
 
@@ -50,6 +52,9 @@ export const Listar = ({ alumnos, eliminarAlumno, restaurarAlumno, papeleraMode 
                         >
                           Ver Detalles
                         </Link>
+                        <Button onClick={() => navigate(`/editar/${a.lu}`)}>
+                          Editar
+                        </Button>
                         <button
                           className="btn btn-sm btn-danger"
                           onClick={() => {

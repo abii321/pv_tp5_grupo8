@@ -8,7 +8,8 @@ import '/src/assets/index.css'
 
 const Main = () => {
     const {
-     alumnos,        
+     alumnos,
+     setAlumnos,         
   papelera,       
   agregarAlumno,
   eliminarAlumno,
@@ -21,7 +22,8 @@ const Main = () => {
     papelera,
     agregarAlumno,
     eliminarAlumno,
-    restaurarAlumno
+    restaurarAlumno,
+    setAlumnos,
   ), [alumnos, papelera]);
 
   return <RouterProvider router={router} />;
