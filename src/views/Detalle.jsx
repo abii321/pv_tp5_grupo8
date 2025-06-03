@@ -18,18 +18,19 @@ export const Detalle = ({ alumnos }) => {
 
   return (
     <div className="container mt-5 d-flex justify-content-center">
-      <div className="card shadow" style={{ width: "24rem" }}>
+      <div className="card shadow" style={{ width: "26rem" }}>
         <div className="card-body">
-          <h5 className="card-title">{alumno.nombre}</h5>
-          <h6 className="card-subtitle mb-2 text-muted">LU: {alumno.lu}</h6>
+          <h5 className="card-title">{alumno.nombre} {alumno.apellido}</h5>
+          <h6 className="card-subtitle mb-3 text-muted">LU: {alumno.lu}</h6>
           <p className="card-text">
-            <strong>Email:</strong> {alumno.email}
-            <br />
-            <strong>Curso:</strong> {alumno.curso}
+            <strong>Curso:</strong> {alumno.curso}<br />
+            <strong>Email:</strong> {alumno.email}<br />
+            <strong>Domicilio:</strong> {alumno.domicilio}<br />
+            <strong>Teléfono:</strong> {alumno.telefono}
           </p>
           <div className="d-flex justify-content-end">
             <button
-              className="btn btn-secondary mt-3"
+              className="btn btn-volver mt-3"
               onClick={() => navigate("/lista")}
             >
               Volver a la lista
