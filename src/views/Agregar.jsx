@@ -1,47 +1,103 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Form, Button, Alert, Container, Row, Col } from "react-bootstrap";
+import { useAgregar } from "../assets/components/useAgregar.js";
 
+// Vista para agregar un nuevo alumno
 export const Agregar = ({ agregarAlumno }) => {
-  const navigate = useNavigate();
+  const { formulario, handleChange, handleSubmit, error } = useAgregar(agregarAlumno);
 
-  const [formulario, setFormulario] = useState({
-    lu: "",
-    nombre: "",
-    apellido: "",
-    curso: "",
-    email: "",
-    domicilio: "",
-    telefono: ""
-  });
-
-  const handleChange = (e) => {
-    setFormulario({
-      ...formulario,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Alumno agregado:", formulario);
- agregarAlumno(formulario);
-    navigate("/lista");
- 
-  };
 
   return (
-    <div>
+    <Container>
       <h2>Agregar Alumno</h2>
-      <form onSubmit={handleSubmit}>
-        <input name="lu" placeholder="LU" onChange={handleChange} required />
-        <input name="nombre" placeholder="Nombre" onChange={handleChange} required />
-        <input name="apellido" placeholder="Apellido" onChange={handleChange} required />
-        <input name="curso" placeholder="Curso" onChange={handleChange} required />
-        <input name="email" placeholder="Email" type="email" onChange={handleChange} required />
-        <input name="domicilio" placeholder="Domicilio" onChange={handleChange} required />
-        <input name="telefono" placeholder="Teléfono" onChange={handleChange} required />
-        <button type="submit">Agregar</button>
-      </form>
-    </div>
+      <Row className="justify-content-center">
+        <Col md={6}>
+          {/* Alerta de error si falta completar algún campo */}
+          {error && <Alert variant="danger">{error}</Alert>}
+
+          <Form onSubmit={handleSubmit} className="formulario-agregar">
+            <Form.Group className="mb-3">
+              <Form.Label>LU</Form.Label>
+              <Form.Control
+                type="text"
+                name="lu"
+                value={formulario.lu}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Nombre</Form.Label>
+              <Form.Control
+                type="text"
+                name="nombre"
+                value={formulario.nombre}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Apellido</Form.Label>
+              <Form.Control
+                type="text"
+                name="apellido"
+                value={formulario.apellido}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Curso</Form.Label>
+              <Form.Control
+                type="text"
+                name="curso"
+                value={formulario.curso}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                value={formulario.email}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Domicilio</Form.Label>
+              <Form.Control
+                type="text"
+                name="domicilio"
+                value={formulario.domicilio}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Teléfono</Form.Label>
+              <Form.Control
+                type="number"
+                name="telefono"
+                value={formulario.telefono}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Button variant="secondary" type="submit">
+              Agregar Alumno
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 };
