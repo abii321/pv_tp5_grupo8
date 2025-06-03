@@ -58,6 +58,15 @@ function EditarAlumno({ alumnos, setAlumnos }) {
                     <Form.Label>Email</Form.Label>
                     <Form.Control type="email" name="email" value={formData.email} onChange={handleChange} />
                 </Form.Group>
+                <Form.Group>
+                        <Form.Label>Domicilio</Form.Label>
+                        <Form.Control type="text" name="domicilio" value={formData.domicilio} onChange={handleChange} />
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Teléfono</Form.Label>
+                        <Form.Control type="text" name="telefono" value={formData.telefono} onChange={handleChange} />
+                    </Form.Group>
+
                 <Button variant="primary" type="submit">
                     Guardar Cambios
                 </Button>
