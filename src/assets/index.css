@@ -73,3 +73,14 @@ footer{
   transform: translateY(-1px);
 }
 
+.btn-volver {
+  background-color: #d9aab3;
+  color: white;
+  border: none;
+}
+
+.btn-volver:hover {
+  background-color: #a67891;
+}
+
+
