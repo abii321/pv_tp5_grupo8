@@ -23,3 +23,53 @@ footer{
   letter-spacing: 0.5px;
   text-align: center;
 }
+
+.formulario-agregar {
+  background-color: #cfa9b2;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(107, 94, 108, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #6b5e6c;
+  margin-bottom: 30px;
+  border: 1px solid #c7a9ba;
+}
+
+/* Etiquetas de los inputs */
+.formulario-agregar .form-label {
+  font-weight: 500;
+  color: #6b5e6c;
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+.formulario-agregar .form-control {
+  border-radius: 10px;
+  border: 1px solid #cfaec0;
+  background-color: #f5eef2;
+  color: #6b5e6c;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.formulario-agregar .form-control:focus {
+  border-color: #b78fa5;
+  box-shadow: 0 0 6px rgba(183, 143, 165, 0.3);
+  background-color: #fdf9fb;
+}
+
+/* Botón */
+.formulario-agregar button {
+  background-color: #dbbfcb;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 24px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.formulario-agregar button:hover {
+  background-color: #a67891;
+  transform: translateY(-1px);
+}
+
