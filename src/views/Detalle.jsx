@@ -1,9 +1,7 @@
-import { useParams, useNavigate } from "react-router-dom";
-
+import { useParams, useNavigate } from "react-router-dom"; 
 export const Detalle = ({ alumnos }) => {
   const { lu } = useParams();
   const navigate = useNavigate();
-
   const alumno = alumnos.find((a) => a.lu === lu);
 
   if (!alumno) {
@@ -14,14 +12,15 @@ export const Detalle = ({ alumnos }) => {
         </div>
       </div>
     );
-  }
+  } // en esta parte se hace un control, si no se encuentra el alumno,  se muestra un cartel de Bootstrap diciendo “Alumno no encontrado”
 
-  return (
-    <div className="container mt-5 d-flex justify-content-center">
-      <div className="card shadow" style={{ width: "26rem" }}>
+  //en la siguiente parte, si se encuentra al alumno, se presenta sus detalles en una card
+  return ( 
+    <div className="container mt-5 d-flex justify-content-center"> 
+      <div className="card shadow" style={{ width: "26rem" }}> 
         <div className="card-body">
           <h5 className="card-title">{alumno.nombre} {alumno.apellido}</h5>
-          <h6 className="card-subtitle mb-3 text-muted">LU: {alumno.lu}</h6>
+          <h6 className="card-subtitle mb-3 text-muted">LU: {alumno.lu}</h6> 
           <p className="card-text">
             <strong>Curso:</strong> {alumno.curso}<br />
             <strong>Email:</strong> {alumno.email}<br />
