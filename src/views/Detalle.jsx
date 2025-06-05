@@ -2,10 +2,10 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Card, Button, Container } from 'react-bootstrap';
 
 export const Detalle = ({ alumnos }) => {
-  const { lu } = useParams(); //// se obtiene el lu desde la URL
-  const navigate = useNavigate();
+  const { lu } = useParams(); // se obtiene el lu desde la URL
+  const navigate = useNavigate(); 
 
-  const alumno = alumnos.find((a) => a.lu === lu); //// se busca al alumno por lu
+  const alumno = alumnos.find((a) => a.lu === lu); // se busca al alumno por lu
 
   if (!alumno) {
     return (
@@ -15,7 +15,7 @@ export const Detalle = ({ alumnos }) => {
         </div>
       </div>
     );
-  } ////aqui se hace un control: si no se encuentra el alumno, mostramos un cartel de Bootstrap diciendo “Alumno no encontrado”
+  } //aqui se hace un control: si no se encuentra el alumno, mostramos un cartel de Bootstrap diciendo “Alumno no encontrado”
 
   return (
     <div>
