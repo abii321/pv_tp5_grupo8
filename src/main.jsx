@@ -6,14 +6,15 @@ import { useLista } from './assets/components/uselista';
 import '/src/assets/index.css'
 
 const Main = () => {
+    //hook personalizado
     const {
-     alumnos,
-     setAlumnos,         
-  papelera,       
-  agregarAlumno,
-  eliminarAlumno,
-  restaurarAlumno
-  } = useLista();
+      alumnos,
+      setAlumnos,         
+      papelera,       
+      agregarAlumno,
+      eliminarAlumno,
+      restaurarAlumno
+    } = useLista();
 
   // Este router se vuelve a crear cada vez que alumnos/papelera cambian
   const router = useMemo(() => createRouter(
@@ -25,7 +26,7 @@ const Main = () => {
     setAlumnos,
   ), [alumnos, papelera]);
 
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />; // Inicializa y habilita el enrutamiento 
 };
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -46,10 +46,7 @@ export const Listar = ({ alumnos, eliminarAlumno, restaurarAlumno, papeleraMode 
                     {/* Si no estamos en papelera, mostramos botón de detalles y eliminar */}
                     {!papeleraMode ? (
                       <>
-                        <Link
-                          to={`/lista/${a.lu}`}
-                          className="btn btn-sm btn-info me-2"
-                        >
+                        <Link to={`/lista/${a.lu}`} className="btn btn-sm btn-info me-2" >
                           Ver Detalles
                         </Link>
                         <Button onClick={() => navigate(`/editar/${a.lu}`)}>
