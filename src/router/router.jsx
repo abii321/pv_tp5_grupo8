@@ -17,10 +17,10 @@ export const router = (
 ) =>
   createBrowserRouter([
     {
-      path: '/',
-      element: <App />,
-      children: [
-        { index: true, element: <Home /> },
+      path: '/', //Especifica la URL que activa esa ruta 
+      element: <App />, // element: componente react que se va a renderizar cuando se visite esa ruta
+      children: [ // children: define rutas hijas, que se rederizan dentro de <Outlet /> del componente padre App
+        { index: true, element: <Home /> }, // equivale al path // index true , indica la ruta por defecto dentro del padre 
         { path: 'acercade', element: <AcercaDe /> },
         { path: 'agregar', element: <Agregar agregarAlumno={agregarAlumno} /> },
         {
