@@ -15,7 +15,7 @@ export const Detalle = ({ alumnos }) => {
         </div>
       </div>
     );
-  }}////aqui se hace un control: si no se encuentra el alumno, mostramos un cartel de Bootstrap diciendo “Alumno no encontrado”
+  }////aqui se hace un control: si no se encuentra el alumno, mostramos un cartel de Bootstrap diciendo “Alumno no encontrado”
 
   return (
     <div>
