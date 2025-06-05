@@ -12,6 +12,7 @@ export const App = () => {
         
         <Navbar className="nav-bar">
           <Container>
+            {/**link reemplaza al a (html), no recarga la pag**/}
             <Nav style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', width: '100%', color:'white'}}>
               <Nav.Link as={Link} to="/">Inicio</Nav.Link>
               <Nav.Link as={Link} to="/lista">Lista de Alumnos</Nav.Link>

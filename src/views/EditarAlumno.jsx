@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 
-function EditarAlumno({ alumnos, setAlumnos }) {
+export const EditarAlumno = ({ alumnos, setAlumnos }) => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -81,5 +81,3 @@ function EditarAlumno({ alumnos, setAlumnos }) {
         </Container>
     );
 }
-
-export default EditarAlumno;
