@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 // Componente que muestra una lista de alumnos o una papelera dependiendo del modo
 export const Listar = ({ alumnos, eliminarAlumno, restaurarAlumno, papeleraMode = false }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate();//para navegar programáticamente entre rutas
   return (
     <div className="container mt-4 p-4 rounded shadow" style={{ backgroundColor: '#fef3f7' }}>
 
@@ -21,7 +21,7 @@ export const Listar = ({ alumnos, eliminarAlumno, restaurarAlumno, papeleraMode 
         </p>
       ) : (
         <div className="table-responsive">
-          <table className="table table-bordered table-hover" style={{ backgroundColor: 'white', borderRadius: '10px' }}>
+         <table className="table table-striped table-bordered table-hover" style={{ backgroundColor: 'white', borderRadius: '10px' }}>
  <thead>
   <tr>
     <th className="encabezado-tabla">LU</th>
@@ -30,10 +30,7 @@ export const Listar = ({ alumnos, eliminarAlumno, restaurarAlumno, papeleraMode 
     <th className="encabezado-tabla">Curso</th>
     <th className="encabezado-tabla">Acciones</th>
   </tr>
-</thead>
-
-
-
+</thead> 
             <tbody>
               {/* Recorremos y mostramos cada alumno */}
               {alumnos.map((a) => (
