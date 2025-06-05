@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { Card, Button, Container } from 'react-bootstrap';
+import { Card, Button, Container } from 'react-bootstrap'; //componentes de React-Bootstrap
 
 export const Detalle = ({ alumnos }) => {
   const { lu } = useParams(); // se obtiene el lu desde la URL
@@ -17,6 +17,7 @@ export const Detalle = ({ alumnos }) => {
     );
   } //aqui se hace un control: si no se encuentra el alumno, mostramos un cartel de Bootstrap diciendo “Alumno no encontrado”
 
+  //si encuentra al alumno, renderiza el detalle
   return (
     <div>
       <h2 className="text-center mt-4">Detalle del Alumno</h2>
@@ -31,8 +32,8 @@ export const Detalle = ({ alumnos }) => {
               <p><strong>Domicilio:</strong> {alumno.domicilio}</p>
               <p><strong>Teléfono:</strong> {alumno.telefono}</p>
             </Card.Text>
-            <Button variant="primary" onClick={() => navigate('/lista')}>
-              Volver a la lista
+            <Button className="btn-volver" onClick={() => navigate('/lista')}>
+            Volver a la lista
             </Button>
           </Card.Body>
         </Card>
