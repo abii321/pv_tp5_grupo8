@@ -1,8 +1,11 @@
-import { useParams, useNavigate } from "react-router-dom"; 
+import { useParams, useNavigate } from 'react-router-dom';
+import { Card, Button, Container } from 'react-bootstrap';
+
 export const Detalle = ({ alumnos }) => {
-  const { lu } = useParams();
+  const { lu } = useParams(); //// se obtiene el lu desde la URL
   const navigate = useNavigate();
-  const alumno = alumnos.find((a) => a.lu === lu);
+
+  const alumno = alumnos.find((a) => a.lu === lu); //// se busca al alumno por lu
 
   if (!alumno) {
     return (
@@ -12,31 +15,30 @@ export const Detalle = ({ alumnos }) => {
         </div>
       </div>
     );
-  } // en esta parte se hace un control, si no se encuentra el alumno,  se muestra un cartel de Bootstrap diciendo “Alumno no encontrado”
+  } ////aqui se hace un control: si no se encuentra el alumno, mostramos un cartel de Bootstrap diciendo “Alumno no encontrado”
 
-  //en la siguiente parte, si se encuentra al alumno, se presenta sus detalles en una card
-  return ( 
-    <div className="container mt-5 d-flex justify-content-center"> 
-      <div className="card shadow" style={{ width: "26rem" }}> 
-        <div className="card-body">
-          <h5 className="card-title">{alumno.nombre} {alumno.apellido}</h5>
-          <h6 className="card-subtitle mb-3 text-muted">LU: {alumno.lu}</h6> 
-          <p className="card-text">
-            <strong>Curso:</strong> {alumno.curso}<br />
-            <strong>Email:</strong> {alumno.email}<br />
-            <strong>Domicilio:</strong> {alumno.domicilio}<br />
-            <strong>Teléfono:</strong> {alumno.telefono}
-          </p>
-          <div className="d-flex justify-content-end">
-            <button
-              className="btn btn-volver mt-3"
-              onClick={() => navigate("/lista")}
-            >
+  return (
+    <div>
+      <h2 className="text-center mt-4">Detalle del Alumno</h2>
+      <Container className="d-flex justify-content-center mt-4">
+        <Card style={{ width: '22rem' }}>
+          <Card.Body className="text-center">
+            <Card.Title>{alumno.nombre}</Card.Title>
+            <Card.Text>
+              <p><strong>LU:</strong> {alumno.lu}</p>
+              <p><strong>Curso:</strong> {alumno.curso}</p>
+              <p><strong>Email:</strong> {alumno.email}</p>
+              <p><strong>Domicilio:</strong> {alumno.domicilio}</p>
+              <p><strong>Teléfono:</strong> {alumno.telefono}</p>
+            </Card.Text>
+            <Button variant="primary" onClick={() => navigate('/lista')}>
               Volver a la lista
-            </button>
-          </div>
-        </div>
-      </div>
+            </Button>
+          </Card.Body>
+        </Card>
+      </Container>
     </div>
   );
 };
+
+export default Detalle;
