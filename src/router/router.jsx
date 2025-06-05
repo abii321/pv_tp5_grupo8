@@ -4,6 +4,7 @@ import { AcercaDe } from '../views/AcercaDe.jsx';
 import { Agregar } from '../views/Agregar.jsx';
 import { Listar } from '../views/Listar.jsx';
 import { Detalle } from '../views/Detalle.jsx';
+import { PaginaError } from '../views/PaginaError.jsx';
 import { createBrowserRouter } from 'react-router-dom';
 import EditarAlumno from '../views/EditarAlumno.jsx';
 
@@ -21,6 +22,7 @@ export const router = (
       element: <App />, // element: componente react que se va a renderizar cuando se visite esa ruta
       children: [ // children: define rutas hijas, que se rederizan dentro de <Outlet /> del componente padre App
         { index: true, element: <Home /> }, // equivale al path // index true , indica la ruta por defecto dentro del padre 
+        { path: '*', element: <PaginaError/> },
         { path: 'acercade', element: <AcercaDe /> },
         { path: 'agregar', element: <Agregar agregarAlumno={agregarAlumno} /> },
         {
